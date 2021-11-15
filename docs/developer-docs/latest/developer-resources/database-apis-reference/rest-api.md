@@ -10,6 +10,15 @@ The REST API allows accessing the [content-types](/developer-docs/latest/develop
 
 [API parameters](#api-parameters) can be used to [filter](#filters), [sort](#sorting), and [paginate](#pagination) results and to [select fields](#fields-selection) and relations to [populate](#relations-population). Additionally, specific parameters related to optional Strapi features can be used, like [publication state](#publication-state) and [locale](#locale).
 
+## Authentication
+
+2 strategies can be used to authenticate requests with Strapi:
+
+* using [API tokens](/developer-docs/latest/setup-deployment-guides/configurations/required/admin-panel.md#api-tokens)
+* or using the [Users & Permissions plugin](/user-docs/latest/users-roles-permissions/introduction-to-users-roles-permissions.md)
+
+Requests to the REST API will only be allowed if at least one of these strategies is set up and gives the appropriate permissions.
+
 ## API Endpoints
 
 Creating a content-type automatically creates some REST API endpoints available to interact with it.
