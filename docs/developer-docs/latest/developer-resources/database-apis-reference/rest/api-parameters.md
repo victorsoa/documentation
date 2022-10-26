@@ -31,7 +31,7 @@ Query parameters use the LHS bracket syntax (i.e. they are encoded using square 
 
 ```js
 // Use qs to build the following query URL:
-// /api/books?sort[0]=title%3Aasc&filters[title][$eq]=hello&populate=%2A&fields[0]=title&pagination[pageSize]=10&pagination[page]=1&publicationState=live&locale[0]=en
+// /api/books?sort[0]=title%3Aasc&filters[title][$eq]=hello&populate=*&fields[0]=title&pagination[pageSize]=10&pagination[page]=1&publicationState=live&locale[0]=en
 
 const qs = require('qs');
 const query = qs.stringify({
