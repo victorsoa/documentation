@@ -598,6 +598,7 @@ module.exports = ({ env }) => ({
               scope: ["user:email"],
               tenant: env("MICROSOFT_TENANT_ID", ""),
               callbackURL:
+                //The redirect URL to add in your microsoft application configurations
                 strapi.admin.services.passport.getStrategyCallbackURL(
                   "azure_ad_oauth2"
                 ),
@@ -605,8 +606,8 @@ module.exports = ({ env }) => ({
             (accessToken, refreshToken, params, profile, done) => {
               let waadProfile = jwt.decode(params.id_token, "", true);
               done(null, {
-                email: waadProfile.email,
-                username: waadProfile.email,
+                email: waadProfile.upn,
+                username: waadProfile.upn,
                 firstname: waadProfile.given_name, // optional if email and username exist
                 lastname: waadProfile.family_name, // optional if email and username exist
               });
